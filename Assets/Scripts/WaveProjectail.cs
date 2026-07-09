@@ -17,15 +17,12 @@ public class WaveProjectail : Projectail
         {
             Transform playerTransform = other.gameObject.GetComponent<Transform>();
             
-            // float x = random.Next((int)GameManager.FirstScreenCorner.x, (int)GameManager.SecondScreenCorner.x);
-            // float y = random.Next((int)GameManager.FirstScreenCorner.y, (int)GameManager.SecondScreenCorner.y);
-            
-            float x = random.Next(-5, 5);
-            float y = random.Next(-5, 5);
+            float x = random.Next((int)GameManager.FirstScreenCorner.x, (int)GameManager.SecondScreenCorner.x);
+            float y = random.Next((int)GameManager.FirstScreenCorner.y, (int)GameManager.SecondScreenCorner.y);
 
             playerTransform.position = new Vector3(x, y, 0);
             
-            //ObjectPool.Release(gameObject);
+            ObjectPool.Release(gameObject);
         }
     }
 }

@@ -79,7 +79,6 @@ public class PlayerController : MonoBehaviour
         }
         
         shapeshiftTimer -= Time.deltaTime;
-        Debug.Log(shapeshiftTimer);
         
         Move();
         if(cooldownTimer < 0)
@@ -119,9 +118,6 @@ public class PlayerController : MonoBehaviour
 
     private void Shapeshift()
     {
-        SpriteRenderer sr = GetComponent<SpriteRenderer>();
-        
-        //
         Array shapes = Enum.GetValues(typeof(Shape));
         Random random = new Random();
         playerShape = (Shape)random.Next(shapes.Length);
@@ -158,7 +154,6 @@ public class PlayerController : MonoBehaviour
     
     void Flash(Color color)
     {
-        //SpriteRenderer sr = GetComponent<SpriteRenderer>();
         sr.color = Color.red;
         sr.DOColor(color, 0.3f).SetEase(Ease.InExpo);
     }

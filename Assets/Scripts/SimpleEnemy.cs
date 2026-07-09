@@ -2,15 +2,26 @@ using UnityEngine;
 
 public class SimpleEnemy : BaseEnemy
 {
+    [SerializeField] protected GameObject bulletSpawner;
+    
     Rigidbody2D rb;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        base.Start();
+        //base.Start();
         
         rb = GetComponent<Rigidbody2D>();
         GameData.MobQuantity++;
+    }
+    
+    protected void OnTriggerEnter2D(Collider2D other)
+    {
+        Debug.Log("OnTriggerEnter2D");
+        if (other.tag == "GameScreen")
+        {
+            bulletSpawner.gameObject.SetActive(true);
+        }
     }
 
     // Update is called once per frame

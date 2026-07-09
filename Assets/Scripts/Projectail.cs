@@ -9,18 +9,13 @@ public class Projectail : MonoBehaviour
     public delegate bool HitMethod(Collider2D collider);
     public HitMethod Hit;
     
-    private ObjectPool<GameObject> objectPool;
-    public ObjectPool<GameObject> ObjectPool { set => objectPool = value; }
+    public ObjectPool<GameObject> ObjectPool { get; set; }
+    public bool IsReleased { get; set; }
+    
 
     public void SetHostType(String targetTag)
     {
         Hit = targetTag == "Player" ? HitEnemy : HitPlayer;
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        //TODO: но что если Hit == null ? 
-        if (Hit(other)) objectPool.Release(gameObject);
     }
 
     bool HitPlayer(Collider2D playerCollider)
@@ -46,12 +41,21 @@ public class Projectail : MonoBehaviour
         }
         return false;
     }
-
-    private void OnTriggerExit2D(Collider2D other)
+    
+    protected void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "GameScreen")
+        //TODO: но что если Hit == null ? 
+        if (Hit(other) && !IsReleased)
         {
-            objectPool.Release(gameObject);
+            ObjectPool.Release(gameObject);
+        }
+    }
+
+    protected void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.tag == "GameScreen" && !IsReleased)
+        {
+            ObjectPool.Release(gameObject);
         }
     }
 }

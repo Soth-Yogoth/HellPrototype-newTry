@@ -10,6 +10,8 @@ public abstract class BaseBulletSpawner : MonoBehaviour
     [SerializeField] [Range(1, 100)] protected int bulletQuantityPerShot;
     [SerializeField] [Range(1, 100)] protected float bulletSpeed = 1f;
     [SerializeField] protected float delay;
+
+    public bool Enabled = true;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     protected void Start()
@@ -20,6 +22,8 @@ public abstract class BaseBulletSpawner : MonoBehaviour
     // Update is called once per frame
     protected void Update()
     {
+        if (!Enabled) return;
+        
         timer += Time.deltaTime;
         
         if (timer >= fireInterval)
