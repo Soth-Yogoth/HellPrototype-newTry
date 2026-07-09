@@ -29,7 +29,7 @@ public class FirstBoss : BaseEnemy
 
     void Start()
     {
-        cooldownTimer = specialDuration;
+        cooldownTimer = baseDuration;
         rb = GetComponent<Rigidbody2D>();
     }
     
@@ -37,7 +37,7 @@ public class FirstBoss : BaseEnemy
     {
         cooldownTimer -= Time.deltaTime;
         
-        Debug.Log(currentState + ", timer: " + cooldownTimer);
+        specialAttack.transform.rotation = Quaternion.Euler(0, 0, 255 + getAngle());
         
         if (cooldownTimer <= 0)
         {
@@ -91,5 +91,13 @@ public class FirstBoss : BaseEnemy
     protected virtual void Death()
     {
         Destroy(gameObject);
+    }
+
+    private float getAngle()
+    {
+        Vector2 direction = playerTransform.position - transform.position;
+        float angle = Vector2.Angle(Vector2.down, direction);
+        
+        return direction.x > 0 ? angle : -angle;
     }
 }
