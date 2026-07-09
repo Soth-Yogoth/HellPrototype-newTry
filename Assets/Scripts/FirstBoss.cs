@@ -7,7 +7,6 @@ enum State
     Special,
     BaseCooldown,
     SpecialCooldown,
-    
 }
 
 public class FirstBoss : BaseEnemy
@@ -30,8 +29,6 @@ public class FirstBoss : BaseEnemy
 
     void Start()
     {
-        //base.Start();
-        
         cooldownTimer = specialDuration;
         rb = GetComponent<Rigidbody2D>();
     }

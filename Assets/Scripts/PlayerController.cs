@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float movementSpeed;
     [SerializeField] private float bulletSpeed;
     [SerializeField] private float fireRate;
+    [SerializeField] [Range(-1, 1)] private float momentum;
     
     [SerializeField] [Range(0, 1)] private float cooldown;
     private float cooldownTimer;
@@ -32,8 +33,7 @@ public class PlayerController : MonoBehaviour
     private Shape playerShape = Shape.Human;
     
     private SpriteRenderer sr;
-
-    Rigidbody2D rb;
+    private Rigidbody2D rb;
 
     [SerializeField] private InputActionAsset actionAsset;
     private InputActionMap actionMap;
@@ -110,7 +110,7 @@ public class PlayerController : MonoBehaviour
             bullet.transform.position = transform.position;
             
             Rigidbody2D bulletRb = bullet.GetComponent<Rigidbody2D>();
-            bulletRb.linearVelocity = Vector2.up * bulletSpeed;
+            bulletRb.linearVelocity = Vector2.up * bulletSpeed + rb.linearVelocity * momentum;
             
             cooldownTimer = cooldown;
         }
