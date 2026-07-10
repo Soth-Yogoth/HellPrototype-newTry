@@ -5,12 +5,14 @@ using System;
 
 using Random = System.Random;
 
-enum Shape
-{
-    Human,
-    Octopus,
-    Puffer
-}
+// enum Shape
+// {
+//     Human,
+//     Octopus,
+//     Puffer
+// }
+
+delegate void Shoot(float bulletSpeed, Vector2 momentum);
 
 public class PlayerController : MonoBehaviour
 {
@@ -30,7 +32,7 @@ public class PlayerController : MonoBehaviour
     private float shapeshiftInterval = 10;
     private float shapeshiftTimer;
     
-    private Shape playerShape = Shape.Human;
+    //private Shape playerShape = Shape.Human;
     
     private SpriteRenderer sr;
     private Rigidbody2D rb;
@@ -42,13 +44,35 @@ public class PlayerController : MonoBehaviour
     private InputAction attackAction;
     private InputAction specialAction;
 
+    private WeaponSystem weaponSystem;
+
+    private Gun gun;
+    // private Shoot[] shoots;
+    // private Shoot makeShoot;
+    
     private BulletPool pool;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
         pool = GetComponent<BulletPool>();
+        
+        sr = GetComponent<SpriteRenderer>();
+        rb = GetComponent<Rigidbody2D>();
+        
+        weaponSystem = GetComponent<WeaponSystem>();
+        
+        Debug.Log(weaponSystem);
+        Debug.Log(weaponSystem.Guns.Length);
+        
+        gun = weaponSystem.Guns[0];
+
+        // shoots = new Shoot[]
+        // {
+        //     weaponSystem.BaseAttack,
+        //     weaponSystem.OctopusAttack,
+        // };
+        // makeShoot = shoots[1];
         
         actionMap = actionAsset.FindActionMap("Player");
         actionMap.Enable();
@@ -57,12 +81,10 @@ public class PlayerController : MonoBehaviour
         attackAction = actionMap.FindAction("Attack");
         specialAction = actionMap.FindAction("Special");
         
-        BaseEnemy.PlayerTransform = transform;
-        GameManager.player = this;
+        //BaseEnemy.PlayerTransform = transform;
+        //GameManager.player = this;
         
         shapeshiftTimer = shapeshiftInterval;
-        
-        sr = GetComponent<SpriteRenderer>();
 
         if (godMod) hp = 1500;
     }
@@ -81,9 +103,11 @@ public class PlayerController : MonoBehaviour
         shapeshiftTimer -= Time.deltaTime;
         
         Move();
-        if(cooldownTimer < 0)
+        if(cooldownTimer < 0 && attackAction.inProgress)
         {
-            Attack();
+            //makeShoot(bulletSpeed, (Vector2)rb.linearVelocity * momentum);
+            gun?.Shoot(rb.linearVelocity);
+            cooldownTimer = cooldown;
         }
         else
         {
@@ -102,38 +126,30 @@ public class PlayerController : MonoBehaviour
         rb.linearVelocity = moveDirection * movementSpeed;
     }
 
-    private void Attack()
-    {
-        if (attackAction.inProgress)
-        {
-            GameObject bullet = pool.GetBullet();
-            bullet.transform.position = transform.position;
-            
-            Rigidbody2D bulletRb = bullet.GetComponent<Rigidbody2D>();
-            bulletRb.linearVelocity = Vector2.up * bulletSpeed + rb.linearVelocity * momentum;
-            
-            cooldownTimer = cooldown;
-        }
-    }
-
     private void Shapeshift()
     {
-        Array shapes = Enum.GetValues(typeof(Shape));
+        //Array shapes = Enum.GetValues(typeof(Shape));
         Random random = new Random();
-        playerShape = (Shape)random.Next(shapes.Length);
+        //playerShape = (Shape)random.Next(shapes.Length);
+        
+        int i = random.Next(weaponSystem.Guns.Length);
+        gun = weaponSystem.Guns[i];
 
-        switch (playerShape)
-        {
-            case Shape.Human:
-                sr.color = Color.black;
-                break;
-            case Shape.Octopus:
-                sr.color = Color.blueViolet;
-                break;
-            case Shape.Puffer:
-                sr.color = Color.yellow;
-                break;
-        }
+        // switch (playerShape)
+        // {
+        //     case Shape.Human:
+        //         sr.color = Color.black;
+        //         gun = weaponSystem.getGun(0);
+        //         break;
+        //     case Shape.Octopus:
+        //         sr.color = Color.green;
+        //         gun = weaponSystem.getGun(1);
+        //         break;
+        //     case Shape.Puffer:
+        //         sr.color = Color.yellow;
+        //         gun = weaponSystem.getGun(2);
+        //         break;
+    //}
     }
 
     private void OnTriggerEnter2D(Collider2D other)

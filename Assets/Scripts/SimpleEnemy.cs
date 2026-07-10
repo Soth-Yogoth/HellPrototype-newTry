@@ -9,7 +9,7 @@ public class SimpleEnemy : BaseEnemy
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        //base.Start();
+        bulletSpawner.gameObject.SetActive(false);
         
         rb = GetComponent<Rigidbody2D>();
         GameData.MobQuantity++;

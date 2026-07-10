@@ -5,7 +5,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Transform screenBounds;
     [SerializeField] private GameObject bossPrefab;
     
-    public static PlayerController player;
+    [SerializeField] private GameObject player;
+    //public static PlayerController player;
     
     public static Vector2 FirstScreenCorner;
     public static Vector2 SecondScreenCorner;
@@ -17,11 +18,8 @@ public class GameManager : MonoBehaviour
         
         FirstScreenCorner = transform.position - (screenBounds.localScale / 2);
         SecondScreenCorner = transform.position + (screenBounds.localScale / 2);
-    }
-    
-    void Update()
-    {
-        
+
+        BaseEnemy.PlayerTransform = player.transform;
     }
 
     private void OnAllMobsDead()
@@ -32,7 +30,7 @@ public class GameManager : MonoBehaviour
     
     public static void GameOver()
     {
-        player.gameObject.SetActive(false);
+        //player.SetActive(false);
         Time.timeScale = 0;
     }
 }
