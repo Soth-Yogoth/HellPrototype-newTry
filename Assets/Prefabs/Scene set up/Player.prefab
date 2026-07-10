@@ -172,12 +172,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89436cef9af6408478ab2c731fd9ecb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  godMod: 0
+  godMod: 1
   movementSpeed: 5
-  bulletSpeed: 5
-  fireRate: 1
-  momentum: 0.5
-  cooldown: 0.5
+  cooldown: 1
+  shapeshiftInterval: 10
   actionAsset: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
 --- !u!114 &-8237040632030410459
 MonoBehaviour:
@@ -209,7 +207,7 @@ MonoBehaviour:
   guns:
   - sprite: {fileID: 0}
     bulletCount: 1
-    fireRate: 1
+    fireRate: 0.25
     arcAngle: 1
     bulletSpeed: 5
     impulseFactor: 0.25
@@ -222,6 +220,6 @@ MonoBehaviour:
   - sprite: {fileID: 0}
     bulletCount: 3
     fireRate: 0.5
-    arcAngle: 30
+    arcAngle: 180
     bulletSpeed: 5
     impulseFactor: 0.25

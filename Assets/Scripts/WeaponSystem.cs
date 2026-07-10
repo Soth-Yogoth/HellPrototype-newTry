@@ -17,7 +17,7 @@ public class Gun
     
     public void Shoot(Vector2 impulse)
     {
-        float stepAngle = arcAngle / bulletCount;
+        float stepAngle = bulletCount > 1 ? arcAngle / (bulletCount - 1) : 90;
         
         for(int i = 0; i < bulletCount; i++)
         {

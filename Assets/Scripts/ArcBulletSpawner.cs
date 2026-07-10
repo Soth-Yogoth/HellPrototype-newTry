@@ -7,7 +7,7 @@ public class ArcBulletSpawner : BaseBulletSpawner
     
     protected override void Shoot()
     {
-        float stepAngle = arcAngle / bulletQuantityPerShot;
+        float stepAngle = arcAngle / (bulletQuantityPerShot - 1);
 
         for (int i = 0; i < bulletQuantityPerShot; i++)
         {
