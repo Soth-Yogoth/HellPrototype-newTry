@@ -5,8 +5,6 @@ using System;
 
 using Random = System.Random;
 
-delegate void Shoot(float bulletSpeed, Vector2 momentum);
-
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private bool godMod = false;
@@ -15,14 +13,11 @@ public class PlayerController : MonoBehaviour
     public event Action OnPlayerDeath;
     
     [SerializeField] private float movementSpeed;
-    // [SerializeField] private float bulletSpeed;
-    // [SerializeField] private float fireRate;
-    // [SerializeField] [Range(-1, 1)] private float momentum;
     
     [SerializeField] [Range(0, 1)] private float cooldown;
     private float cooldownTimer;
     
-    private float shapeshiftInterval = 10;
+    [SerializeField] [Min(1)] private float shapeshiftInterval = 10;
     private float shapeshiftTimer;
     
     private SpriteRenderer sr;
@@ -56,9 +51,6 @@ public class PlayerController : MonoBehaviour
         moveAction = actionMap.FindAction("Move");
         attackAction = actionMap.FindAction("Attack");
         specialAction = actionMap.FindAction("Special");
-        
-        //BaseEnemy.PlayerTransform = transform;
-        //GameManager.player = this;
         
         shapeshiftTimer = shapeshiftInterval;
 

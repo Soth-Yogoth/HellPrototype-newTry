@@ -39,6 +39,17 @@ public class Projectail : MonoBehaviour
             
             return true;
         }
+        if (enemyCollider.gameObject.CompareTag("FinalLight"))
+        {
+            if (GameData.ChanceToWin > 0)
+            {
+                Rigidbody2D rb = GetComponent<Rigidbody2D>();
+                rb.linearVelocity = -rb.linearVelocity;
+                
+                GameData.ChanceToWin -= 1;
+            }
+            else GameManager.GameOver();
+        }
         return false;
     }
     

@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         GameData.OnAllMobsDead += OnAllMobsDead;
+        GameData.OnGameOver += GameOver;
+        GameData.OnEnterToNirvana += TrueEnding;
         //player.OnPlayerDeath += GameOver;
         
         FirstScreenCorner = transform.position - (screenBounds.localScale / 2);
@@ -31,6 +33,12 @@ public class GameManager : MonoBehaviour
     public static void GameOver()
     {
         //player.SetActive(false);
+        Time.timeScale = 0;
+    }
+    
+    public static void TrueEnding()
+    {
+        Debug.Log("Вы достигли нирваны.");
         Time.timeScale = 0;
     }
 }
