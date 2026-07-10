@@ -30,20 +30,20 @@ public class PlayerController : MonoBehaviour
     private InputAction attackAction;
     private InputAction specialAction;
 
-    private WeaponSystem weaponSystem;
-    private Gun gun;
+    private BuildSystem weaponSystem;
+    private Build currentBuild;
     
     void Start()
     {
         sr = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
         
-        weaponSystem = GetComponent<WeaponSystem>();
+        weaponSystem = GetComponent<BuildSystem>();
         
         Debug.Log(weaponSystem);
-        Debug.Log(weaponSystem.Guns.Length);
+        Debug.Log(weaponSystem.Builds.Length);
         
-        gun = weaponSystem.Guns[0];
+        currentBuild = weaponSystem.Builds[0];
         
         actionMap = actionAsset.FindActionMap("Player");
         actionMap.Enable();
@@ -72,7 +72,7 @@ public class PlayerController : MonoBehaviour
         Move();
         if(cooldownTimer < 0 && attackAction.inProgress)
         {
-            gun?.Shoot(rb.linearVelocity);
+            currentBuild?.Shoot(rb.linearVelocity);
             cooldownTimer = cooldown;
         }
         else
@@ -96,10 +96,13 @@ public class PlayerController : MonoBehaviour
     {
         Random random = new Random();
         
-        int i = random.Next(weaponSystem.Guns.Length);
-        gun = weaponSystem.Guns[i];
+        int i = random.Next(weaponSystem.Builds.Length);
+        currentBuild = weaponSystem.Builds[i];
         
-        sr.color = gun.GetSpriteColor();
+        //
+        sr.color = currentBuild.GetSpriteColor();
+        movementSpeed = currentBuild.GetMoveSpeed();
+        cooldown = currentBuild.GetCooldown();
     }
 
     private void OnTriggerEnter2D(Collider2D other)

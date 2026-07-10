@@ -1,13 +1,17 @@
 using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 [System.Serializable]
-public class Gun 
+public class Build 
 {
+    [Header("Character")]
     [SerializeField] private Color spriteColor;
+    [SerializeField] private float moveSpeed;
     
+    [Header("Gun")]
     [SerializeField][Min(1)] private int bulletCount;
-    [SerializeField][Min(0)] private float fireRate;
+    [SerializeField][Range(0, 1)]  private float cooldown;
     [SerializeField] private float arcAngle;
     [SerializeField] private float bulletSpeed;
     [SerializeField] private float impulseFactor;
@@ -33,30 +37,41 @@ public class Gun
         }
     }
 
+    //Ленивое решение 2
     public Color GetSpriteColor()
     {
         return spriteColor;
     }
+    
+    public float GetMoveSpeed()
+    {
+        return moveSpeed;
+    }
+    
+    public float GetCooldown()
+    {
+        return cooldown;
+    }
 }
 
-public class WeaponSystem : MonoBehaviour
+public class BuildSystem : MonoBehaviour
 {
     private BulletPool pool;
     
-    [SerializeField] private Gun[] guns;
-    public Gun[] Guns
+    [SerializeField] private Build[] builds;
+    public Build[] Builds
     {
-        get { return guns; }
+        get { return builds; }
     }
     
     void Start()
     {
         pool = GetComponent<BulletPool>();
 
-        foreach (Gun gun in guns)
+        foreach (Build build in builds)
         {
-            gun.Pool = pool;
-            gun.HostTransform = transform;
+            build.Pool = pool;
+            build.HostTransform = transform;
         }
     }
 }
