@@ -82,14 +82,9 @@ public class FirstBoss : BaseEnemy
         rb.linearVelocity = direction * moveSpeed;
     }
     
-    public void TakeDamage(int damage)
+    protected override void Death()
     {
-        if (health - damage <= 0) Death();
-        else health -= damage;
-    }
-
-    protected virtual void Death()
-    {
+        GameData.BossesKilled++;
         Destroy(gameObject);
     }
 

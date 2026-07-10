@@ -7,11 +7,13 @@ public delegate void OnWinDelegate();
 public class GameData : ScriptableObject
 {
     private static int chanceToWin = 3;
-    
+
+    private static int bossesKilled = 0;
     private static int mobQuantity = 0;
     private static int score = 0;
     
     public static event Action OnAllMobsDead;
+    public static event Action OnBossKilled;
     public static event Action OnGameOver;
     public static OnWinDelegate OnEnterToNirvana;
 
@@ -22,6 +24,16 @@ public class GameData : ScriptableObject
         {
             chanceToWin = value;
             if (chanceToWin == 0) OnGameOver?.Invoke();
+        }
+    }
+    
+    public static int BossesKilled
+    {
+        get { return bossesKilled; } 
+        set
+        {
+            bossesKilled = value;
+            OnBossKilled?.Invoke();
         }
     }
 

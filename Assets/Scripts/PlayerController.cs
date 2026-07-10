@@ -98,6 +98,8 @@ public class PlayerController : MonoBehaviour
         
         int i = random.Next(weaponSystem.Guns.Length);
         gun = weaponSystem.Guns[i];
+        
+        sr.color = gun.GetSpriteColor();
     }
 
     private void OnTriggerEnter2D(Collider2D other)

@@ -4,7 +4,7 @@ using UnityEngine;
 [System.Serializable]
 public class Gun 
 {
-    [SerializeField] private SpriteRenderer sprite;
+    [SerializeField] private Color spriteColor;
     
     [SerializeField][Min(1)] private int bulletCount;
     [SerializeField][Min(0)] private float fireRate;
@@ -31,6 +31,11 @@ public class Gun
             Rigidbody2D bulletRb = bullet.GetComponent<Rigidbody2D>();
             bulletRb.linearVelocity = bulletVelocity * bulletSpeed + impulse * impulseFactor;
         }
+    }
+
+    public Color GetSpriteColor()
+    {
+        return spriteColor;
     }
 }
 
