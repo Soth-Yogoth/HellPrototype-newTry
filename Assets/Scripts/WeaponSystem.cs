@@ -43,8 +43,7 @@ public class WeaponSystem : MonoBehaviour
     {
         get { return guns; }
     }
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    
     void Start()
     {
         pool = GetComponent<BulletPool>();
@@ -55,35 +54,4 @@ public class WeaponSystem : MonoBehaviour
             gun.HostTransform = transform;
         }
     }
-
-    // public Gun getGun(int index)
-    // {
-    //     return guns[index];
-    // }
-
-    // public void BaseAttack(float bulletSpeed, Vector2 momentum)
-    // {
-    //     GameObject bullet = pool.GetBullet();
-    //     bullet.transform.position = transform.position;
-    //         
-    //     Rigidbody2D bulletRb = bullet.GetComponent<Rigidbody2D>();
-    //     bulletRb.linearVelocity = Vector2.up * bulletSpeed + momentum;
-    // }
-    //
-    // public void OctopusAttack(float bulletSpeed, Vector2 momentum)
-    // {
-    //     float stepAngle = arcAngle / OctopusBulletCount;
-    //     
-    //     for(int i = 0; i < OctopusBulletCount; i++)
-    //     {
-    //         GameObject bullet = pool.GetBullet();
-    //         bullet.transform.position = transform.position;
-    //         
-    //         float spawnPoint = (stepAngle * i) * Mathf.Deg2Rad;
-    //         Vector2 bulletVelocity = new Vector2((float)Math.Cos(spawnPoint), (float)Math.Sin(spawnPoint));
-    //         
-    //         Rigidbody2D bulletRb = bullet.GetComponent<Rigidbody2D>();
-    //         bulletRb.linearVelocity = bulletVelocity * bulletSpeed + momentum;
-    //     }
-    // }
 }

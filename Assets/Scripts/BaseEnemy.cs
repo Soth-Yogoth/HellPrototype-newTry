@@ -7,7 +7,7 @@ public abstract class BaseEnemy : MonoBehaviour
     [SerializeField] [Min(1)] protected int moveSpeed;
     
     protected static Transform playerTransform;
-    public static Transform PlayerTransform { set { playerTransform = value; } } //Вызов из PlayerController
+    public static Transform PlayerTransform { set { playerTransform = value; } } //Вызов из GameManager
 
     public void TakeDamage(int damage)
     {
