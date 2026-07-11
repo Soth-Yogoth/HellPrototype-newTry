@@ -8,8 +8,10 @@ public class PlayerHP : MonoBehaviour
     
     void Start()
     {
+        Debug.Log("[PlayerHP] Start");
+        
         UpdateHearts(GameData.PlayerHp);
-        GameData.OnPlayerHpChanged +=  UpdateHearts;
+        GameData.OnPlayerHpChanged += UpdateHearts;
     }
 
     void UpdateHearts(int heartsQuantity)

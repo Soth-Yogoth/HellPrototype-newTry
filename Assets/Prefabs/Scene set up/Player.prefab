@@ -121,7 +121,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!70 &3248620102001886887
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -189,17 +189,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WeaponSystem
   builds:
-  - spriteColor: {r: 0, g: 0, b: 0, a: 0}
+  - sprite: {fileID: 0}
     moveSpeed: 5
-    Pool: {fileID: 5537560429422913957, guid: 1ac3c1c2529d35b478dd76d0b9c62712, type: 3}
     bulletCount: 1
     cooldown: 0.305
     arcAngle: 10
     bulletSpeed: 5
     impulseFactor: 0
-  - spriteColor: {r: 0.28319678, g: 0.8113208, b: 0.44036838, a: 0}
+  - sprite: {fileID: 0}
     moveSpeed: 5
-    Pool: {fileID: 5537560429422913957, guid: 1ac3c1c2529d35b478dd76d0b9c62712, type: 3}
     bulletCount: 4
     cooldown: 0.236
     arcAngle: 180
