@@ -20,6 +20,15 @@ public class GameData : ScriptableObject
     public static event Action OnGameOver;
     public static OnWinDelegate OnEnterToNirvana;
 
+    public static void Reset()
+    {
+        chanceToWin = 3;
+        
+        bossesKilled = 0;
+        mobQuantity = 0;
+        playerHp = 3;
+    }
+
     public static int PlayerHp
     {
         get { return playerHp; }
