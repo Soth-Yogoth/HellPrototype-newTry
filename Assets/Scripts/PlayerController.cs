@@ -98,7 +98,7 @@ public class PlayerController : MonoBehaviour
         currentBuild = weaponSystem.Builds[i];
         
         //
-        sr.color = currentBuild.GetSpriteColor();
+        sr.sprite = currentBuild.GetSprite();
         movementSpeed = currentBuild.GetMoveSpeed();
         cooldown = currentBuild.GetCooldown();
     }

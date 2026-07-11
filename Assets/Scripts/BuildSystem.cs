@@ -6,7 +6,8 @@ using UnityEngine.Serialization;
 public class Build 
 {
     [Header("Character")]
-    [SerializeField] private Color spriteColor;
+    //[SerializeField] private Color spriteColor;
+    [SerializeField] private Sprite sprite;
     [SerializeField] private float moveSpeed;
 
     [Header("Gun")] 
@@ -39,9 +40,9 @@ public class Build
     }
 
     //Ленивое решение 2
-    public Color GetSpriteColor()
+    public Sprite GetSprite()
     {
-        return spriteColor;
+        return sprite;
     }
     
     public float GetMoveSpeed()
