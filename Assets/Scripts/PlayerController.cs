@@ -40,9 +40,6 @@ public class PlayerController : MonoBehaviour
         
         weaponSystem = GetComponent<BuildSystem>();
         
-        Debug.Log(weaponSystem);
-        Debug.Log(weaponSystem.Builds.Length);
-        
         currentBuild = weaponSystem.Builds[0];
         
         actionMap = actionAsset.FindActionMap("Player");
@@ -73,7 +70,7 @@ public class PlayerController : MonoBehaviour
         Move();
         if(cooldownTimer < 0 && attackAction.inProgress)
         {
-            currentBuild?.Shoot(rb.linearVelocity);
+            currentBuild?.Shoot(new Vector2(rb.linearVelocity.x, 0));
             cooldownTimer = cooldown;
         }
         else
