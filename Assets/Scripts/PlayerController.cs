@@ -40,9 +40,6 @@ public class PlayerController : MonoBehaviour
         
         weaponSystem = GetComponent<BuildSystem>();
         
-        Debug.Log(weaponSystem);
-        Debug.Log(weaponSystem.Builds.Length);
-        
         currentBuild = weaponSystem.Builds[0];
         
         actionMap = actionAsset.FindActionMap("Player");
@@ -53,6 +50,7 @@ public class PlayerController : MonoBehaviour
         specialAction = actionMap.FindAction("Special");
         
         shapeshiftTimer = shapeshiftInterval;
+        Shapeshift();
 
         if (godMod) hp = 1500;
     }
@@ -72,7 +70,7 @@ public class PlayerController : MonoBehaviour
         Move();
         if(cooldownTimer < 0 && attackAction.inProgress)
         {
-            currentBuild?.Shoot(rb.linearVelocity);
+            currentBuild?.Shoot(new Vector2(rb.linearVelocity.x, 0));
             cooldownTimer = cooldown;
         }
         else
@@ -100,7 +98,7 @@ public class PlayerController : MonoBehaviour
         currentBuild = weaponSystem.Builds[i];
         
         //
-        sr.color = currentBuild.GetSpriteColor();
+        sr.sprite = currentBuild.GetSprite();
         movementSpeed = currentBuild.GetMoveSpeed();
         cooldown = currentBuild.GetCooldown();
     }
@@ -113,9 +111,9 @@ public class PlayerController : MonoBehaviour
     public void GetHit(int damage)
     {
         Flash(sr.color);
-        hp -= damage;
+        GameData.PlayerHp -= 1;
 
-        if (hp <= 0) GameManager.GameOver();
+        if (GameData.PlayerHp <= 0) GameManager.GameOver();
     }
     
     void Flash(Color color)

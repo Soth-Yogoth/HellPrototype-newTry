@@ -19,7 +19,6 @@ public class SimpleEnemy : BaseEnemy
     
     protected void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("OnTriggerEnter2D");
         if (other.tag == "GameScreen")
         {
             bulletSpawner.gameObject.SetActive(true);

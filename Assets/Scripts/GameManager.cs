@@ -1,4 +1,6 @@
+using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -58,12 +60,26 @@ public class GameManager : MonoBehaviour
     
     public static void GameOver()
     {
-        Time.timeScale = 0;
+        //Time.timeScale = 0;
         Instantiate(gameOverPanel);
     }
     
     public static void TrueEnding()
     {
+        GameData.OnGameOver -= GameOver;
         Instantiate(winPanel);
+    }
+
+    public static void Reset()
+    {
+        Time.timeScale = 1;
+        Debug.Log("Reset");
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public static void QuitGame()
+    {
+        Debug.Log("Quit");
+        //Application.Quit();
     }
 }
