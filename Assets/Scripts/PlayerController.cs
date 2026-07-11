@@ -53,6 +53,7 @@ public class PlayerController : MonoBehaviour
         specialAction = actionMap.FindAction("Special");
         
         shapeshiftTimer = shapeshiftInterval;
+        Shapeshift();
 
         if (godMod) hp = 1500;
     }
@@ -113,9 +114,9 @@ public class PlayerController : MonoBehaviour
     public void GetHit(int damage)
     {
         Flash(sr.color);
-        hp -= damage;
+        GameData.PlayerHp -= 1;
 
-        if (hp <= 0) GameManager.GameOver();
+        if (GameData.PlayerHp <= 0) GameManager.GameOver();
     }
     
     void Flash(Color color)

@@ -48,7 +48,11 @@ public class Projectail : MonoBehaviour
                 
                 GameData.ChanceToWin -= 1;
             }
-            else GameManager.GameOver();
+            else
+            {
+                Debug.Log("Catch!");
+                GameManager.GameOver();
+            }
         }
         return false;
     }
