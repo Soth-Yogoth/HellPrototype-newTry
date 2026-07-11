@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &917724864700053645
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8956314654688003168}
+  - component: {fileID: 4490498903987346081}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8956314654688003168
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 917724864700053645}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4490498903987346081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 917724864700053645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6db95687fa4c5c64b97c46bd5a231e35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  screenBounds: {fileID: 0}
+  firstWave: {fileID: 157456976151676208, guid: 2b123c69eb95b5943a22362db02c6670, type: 3}
+  secondWave: {fileID: 157456976151676208, guid: 2b123c69eb95b5943a22362db02c6670, type: 3}
+  firstBossPrefab: {fileID: 4963321320723634246, guid: fdb3819d01a07dc41a78f9f8c68d2607, type: 3}
+  secondBossPrefab: {fileID: 3659931097113485129, guid: 9872d81bde1c9cf4fa6ef2412d838fed, type: 3}
+  player: {fileID: 5562302508478169900, guid: 60dd94f7363e0ba4182e4cd3f0dde291, type: 3}
+  WinPanel: {fileID: 6382412330865738263, guid: a72c37e9013019543bcf69fa668047db, type: 3}
+  GameOverPanel: {fileID: 9186938755335524636, guid: 9d3c8c1e12a47864cb888bd56334c7b8, type: 3}

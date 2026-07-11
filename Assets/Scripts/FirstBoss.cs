@@ -24,11 +24,14 @@ public class FirstBoss : BaseEnemy
 
     [SerializeField] protected GameObject bulletSpawner;
     [SerializeField] private GameObject specialAttack;
+    [SerializeField] private HpBar hpBar;
 
     private Rigidbody2D rb;
 
     void Start()
     {
+        base.Start();
+        
         cooldownTimer = baseDuration;
         rb = GetComponent<Rigidbody2D>();
     }
@@ -80,6 +83,18 @@ public class FirstBoss : BaseEnemy
         direction.Normalize();
         
         rb.linearVelocity = direction * moveSpeed;
+    }
+    
+    public override void TakeDamage(int damage)
+    {
+        if (health - damage <= 0)
+        {
+            Death();
+        }
+        else health -= damage;
+        
+        Debug.Log(health);
+        hpBar.UpdateHpBar(health, maxHp);
     }
     
     protected override void Death()

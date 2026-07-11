@@ -8,8 +8,9 @@ public class Build
     [Header("Character")]
     [SerializeField] private Color spriteColor;
     [SerializeField] private float moveSpeed;
-    
-    [Header("Gun")]
+
+    [Header("Gun")] 
+    //[SerializeField] private BulletPool Pool;
     [SerializeField][Min(1)] private int bulletCount;
     [SerializeField][Range(0, 1)]  private float cooldown;
     [SerializeField] private float arcAngle;

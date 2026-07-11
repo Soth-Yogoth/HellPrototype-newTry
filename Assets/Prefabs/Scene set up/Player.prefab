@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 2486522540705325544}
   - component: {fileID: 3248620102001886887}
   - component: {fileID: 6839221042139562457}
-  - component: {fileID: -8237040632030410459}
   - component: {fileID: 4950178603107618092}
   m_Layer: 3
   m_Name: Player
@@ -177,21 +176,6 @@ MonoBehaviour:
   cooldown: 1
   shapeshiftInterval: 10
   actionAsset: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
---- !u!114 &-8237040632030410459
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5562302508478169900}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d5643a160ad1b3439e6dd9b9f1da0b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BulletPool
-  bulletPrefab: {fileID: 8832318743188406757, guid: 47945741f77cdae4a8e0c6392425e5b1, type: 3}
-  capacity: 100
-  maxSize: 1000
 --- !u!114 &4950178603107618092
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,22 +188,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cf1b0d8a05f6474a83ac4efcbcb81de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WeaponSystem
-  guns:
-  - sprite: {fileID: 0}
+  builds:
+  - spriteColor: {r: 0, g: 0, b: 0, a: 0}
+    moveSpeed: 5
+    Pool: {fileID: 5537560429422913957, guid: 1ac3c1c2529d35b478dd76d0b9c62712, type: 3}
     bulletCount: 1
-    fireRate: 0.25
-    arcAngle: 1
+    cooldown: 0.305
+    arcAngle: 10
     bulletSpeed: 5
-    impulseFactor: 0.25
-  - sprite: {fileID: 0}
-    bulletCount: 5
-    fireRate: 1
-    arcAngle: 60
-    bulletSpeed: 5
-    impulseFactor: 0.25
-  - sprite: {fileID: 0}
-    bulletCount: 3
-    fireRate: 0.5
+    impulseFactor: 0
+  - spriteColor: {r: 0.28319678, g: 0.8113208, b: 0.44036838, a: 0}
+    moveSpeed: 5
+    Pool: {fileID: 5537560429422913957, guid: 1ac3c1c2529d35b478dd76d0b9c62712, type: 3}
+    bulletCount: 4
+    cooldown: 0.236
     arcAngle: 180
-    bulletSpeed: 5
-    impulseFactor: 0.25
+    bulletSpeed: 2
+    impulseFactor: 0
