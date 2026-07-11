@@ -377,9 +377,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 738b2967d42ae684d837c44568f18ebe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FirstBoss
-  maxHp: 800
+  maxHp: 1200
   moveSpeed: 1
-  health: 400
+  health: 1200
   specialDuration: 4
   baseDuration: 15
   cooldown: 2
