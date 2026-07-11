@@ -40,7 +40,12 @@ public class PlayerController : MonoBehaviour
         
         weaponSystem = GetComponent<BuildSystem>();
         
+        shapeshiftTimer = shapeshiftInterval;
         currentBuild = weaponSystem.Builds[0];
+        
+        sr.sprite = currentBuild.GetSprite();
+        movementSpeed = currentBuild.GetMoveSpeed();
+        cooldown = currentBuild.GetCooldown();
         
         actionMap = actionAsset.FindActionMap("Player");
         actionMap.Enable();
@@ -48,9 +53,6 @@ public class PlayerController : MonoBehaviour
         moveAction = actionMap.FindAction("Move");
         attackAction = actionMap.FindAction("Attack");
         specialAction = actionMap.FindAction("Special");
-        
-        shapeshiftTimer = shapeshiftInterval;
-        Shapeshift();
 
         if (godMod) hp = 1500;
     }
