@@ -55,7 +55,7 @@ public class GameManager : MonoBehaviour
     private void OnAllMobsDead()
     {
         GameObject boss = Instantiate(bosses[GameData.BossesKilled]);
-        boss.SetActive(true);
+        //boss.SetActive(true);
     }
     
     public static void GameOver()

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class SimpleEnemy : BaseEnemy
 {
-    [SerializeField] protected GameObject bulletSpawner;
+    //[SerializeField] protected GameObject bulletSpawner;
     
     Rigidbody2D rb;
     

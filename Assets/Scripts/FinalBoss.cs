@@ -51,6 +51,6 @@ public class FinalBoss : MonoBehaviour
             x => collider.radius = x, 15, timeToEnd).SetEase(Ease.InQuart);
         
         lightTween = DOTween.To(()=> light.pointLightOuterRadius, 
-            x => light.pointLightOuterRadius = x, 30, timeToEnd / 2).SetEase(Ease.InQuart);
+            x => light.pointLightOuterRadius = x, 30, timeToEnd).SetEase(Ease.InQuart);
     }
 }

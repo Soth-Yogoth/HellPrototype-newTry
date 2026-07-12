@@ -25,7 +25,7 @@ public class FirstBoss : BaseEnemy
 
     private bool isReady = false;
 
-    [SerializeField] protected GameObject bulletSpawner;
+    //[SerializeField] protected GameObject bulletSpawner;
     [SerializeField] private GameObject specialAttack;
     [SerializeField] private HpBar hpBar;
 
