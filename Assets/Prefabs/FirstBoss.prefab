@@ -1,7 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
-<<<<<<< Updated upstream
-=======
 --- !u!1 &317486922376857798
 GameObject:
   m_ObjectHideFlags: 0
@@ -141,7 +139,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0.06, y: 2.31}
+  m_AnchoredPosition: {x: 0, y: 1}
   m_SizeDelta: {x: 100, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &4677727335421534100
@@ -207,7 +205,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
->>>>>>> Stashed changes
 --- !u!1 &4963321320723634246
 GameObject:
   m_ObjectHideFlags: 0
@@ -237,17 +234,13 @@ Transform:
   m_GameObject: {fileID: 4963321320723634246}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-<<<<<<< Updated upstream
   m_LocalPosition: {x: 0, y: 2.45, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
-=======
-  m_LocalPosition: {x: 0, y: 15, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
->>>>>>> Stashed changes
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 7631764875261504571}
   - {fileID: 425291789938524931}
+  - {fileID: 1407035731371150428}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4797296639366566684
@@ -297,10 +290,10 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -6248741079362886434, guid: 1fd9a79e3e4e6c141a52a85d309fc331, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Color: {r: 1, g: 0.6277034, b: 0.09119487, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -384,16 +377,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 738b2967d42ae684d837c44568f18ebe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FirstBoss
-  health: 1200
-  moveSpeed: 2
+  maxHp: 800
+  moveSpeed: 1
+  health: 400
   specialDuration: 4
   baseDuration: 15
   cooldown: 2
   movementBorder: 5
   bulletSpawner: {fileID: 3417508562629583186}
   specialAttack: {fileID: 9212302639879084590}
-<<<<<<< Updated upstream
-=======
   hpBar: {fileID: 2448746619350982702}
 --- !u!1 &7863044930241161956
 GameObject:
@@ -454,14 +446,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9386792, g: 0.039849572, b: 0.8494658, a: 1}
+  m_Color: {r: 1, g: 0.31760997, b: 0.44036946, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1701027728777784432, guid: bc254e1d7050a774e9fc46dd5bbdd34a, type: 3}
+  m_Sprite: {fileID: -7443756053782179069, guid: 09579b748e2fba1419fda72b1ab7ba7c, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -483,7 +475,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce8be98af98f6ac40b615e4e2ad0a5ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HpBar
->>>>>>> Stashed changes
 --- !u!1001 &1030926578418083236
 PrefabInstance:
   m_ObjectHideFlags: 0
