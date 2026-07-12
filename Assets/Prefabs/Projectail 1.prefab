@@ -169,4 +169,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cef398e99ae4d0459c65e24347e9ecc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Projectail
-  damage: 50
+  damage: 500

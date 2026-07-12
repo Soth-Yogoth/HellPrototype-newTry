@@ -94,15 +94,16 @@ public class FirstBoss : BaseEnemy
     
     public override void TakeDamage(int damage)
     {
-        if(!isReady) return;
+        if(!isReady)
+        {
+            return;
+        }
         
         if (health - damage <= 0)
         {
             Death();
         }
         else health -= damage;
-        
-        Debug.Log(health);
         hpBar.UpdateHpBar(health, maxHp);
     }
     
