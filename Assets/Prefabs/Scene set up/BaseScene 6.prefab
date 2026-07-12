@@ -604,7 +604,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2724461792238339555, guid: 27a104e6dbf01ec4ba5b866634fe8610, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4509607810308375348}
   m_SourcePrefab: {fileID: 100100000, guid: 27a104e6dbf01ec4ba5b866634fe8610, type: 3}
 --- !u!4 &1076391520682022331 stripped
 Transform:
@@ -616,6 +619,21 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2724461792238339555, guid: 27a104e6dbf01ec4ba5b866634fe8610, type: 3}
   m_PrefabInstance: {fileID: 4077940789659066652}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4509607810308375348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2114715016317494527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d5643a160ad1b3439e6dd9b9f1da0b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BulletPool
+  bulletPrefab: {fileID: 2115189768953687497, guid: 51be450b2a9c64245bd66098ae02cfab, type: 3}
+  capacity: 100
+  maxSize: 1000
 --- !u!1001 &5234838149853737109
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -831,6 +849,10 @@ PrefabInstance:
       propertyPath: screenBounds
       value: 
       objectReference: {fileID: 6482183273280628679}
+    - target: {fileID: 4056048700642128056, guid: 650281a7a906dca43902f400dbeb5917, type: 3}
+      propertyPath: secondBossPrefab
+      value: 
+      objectReference: {fileID: 507346052569566906, guid: f0cd72b177b3fbe4e9765f69738d2da9, type: 3}
     - target: {fileID: 8312139865117409372, guid: 650281a7a906dca43902f400dbeb5917, type: 3}
       propertyPath: m_Name
       value: GameManager
