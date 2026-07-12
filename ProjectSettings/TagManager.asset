@@ -8,6 +8,7 @@ TagManager:
   - Spawner
   - GameScreen
   - FinalLight
+  - BossFinalLine
   layers:
   - Default
   - TransparentFX

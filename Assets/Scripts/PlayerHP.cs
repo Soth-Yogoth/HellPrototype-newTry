@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class PlayerHP : MonoBehaviour
@@ -25,5 +26,10 @@ public class PlayerHP : MonoBehaviour
         {
             Instantiate(heartPrefab, transform);
         }
+    }
+
+    private void OnDestroy()
+    {
+        GameData.OnPlayerHpChanged -= UpdateHearts;
     }
 }

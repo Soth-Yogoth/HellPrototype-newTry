@@ -11,8 +11,6 @@ public class SimpleEnemy : BaseEnemy
     {
         base.Start();
         
-        bulletSpawner.gameObject.SetActive(false);
-        
         rb = GetComponent<Rigidbody2D>();
         GameData.MobQuantity++;
     }

@@ -22,6 +22,8 @@ public class GameData : ScriptableObject
 
     public static void Reset()
     {
+        Debug.Log("GameData Reset");
+        
         chanceToWin = 3;
         
         bossesKilled = 0;
@@ -35,9 +37,7 @@ public class GameData : ScriptableObject
         set
         {
             playerHp = value;
-            
             OnPlayerHpChanged?.Invoke(playerHp); 
-            //if(playerHp == 0) OnGameOver?.Invoke();
         }
     }
 
