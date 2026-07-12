@@ -28,8 +28,6 @@ public class GameManager : MonoBehaviour
     
     void Start()
     {
-        Debug.Log("Start");
-        
         bosses = new GameObject[] { firstBossPrefab, secondBossPrefab };
         enemyWaves = new GameObject[] { firstWave, secondWave };
         
@@ -75,7 +73,6 @@ public class GameManager : MonoBehaviour
     public static void Reset()
     {
         Time.timeScale = 1;
-        Debug.Log("Reset");
 
         GameData.Reset();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
@@ -84,7 +81,6 @@ public class GameManager : MonoBehaviour
     public static void QuitGame()
     {
         Debug.Log("Quit");
-        //Application.Quit(); 
     }
 
     void OnDestroy()

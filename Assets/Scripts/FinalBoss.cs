@@ -5,45 +5,52 @@ using UnityEngine.Rendering.Universal;
 public class FinalBoss : MonoBehaviour
 {
     [Header("Light")]
-    [SerializeField] private GameObject body;
+    [SerializeField] private Light2D light;
     [SerializeField][Min(0)] private float timeToEnd;
+    
     private Tween lightTween;
+    private Tween colliderTween;
+
+    private Rigidbody2D rb;
+    private CircleCollider2D collider;
+    private bool isReady = false;
     
-    
-    
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
-        
-        transform.DOScale(new Vector3(15f, 15f, 15f), timeToEnd).SetEase(Ease.Linear);
-        
-        Light2D light = GetComponent<Light2D>();
-        lightTween = DOTween.To(()=> light.pointLightOuterRadius, 
-            x => light.pointLightOuterRadius = x, 30, timeToEnd).SetEase(Ease.InQuart);
+        collider = GetComponent<CircleCollider2D>();
+        rb = GetComponent<Rigidbody2D>();
+        rb.linearVelocity = Vector2.down;
     }
 
     void OnDestroy()
     {
         transform.DOKill();
         lightTween?.Kill();
+        colliderTween?.Kill();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.tag == "BossFinalLine")
+        {
+            isReady = true;
+            rb.linearVelocity = Vector2.zero;
+            
+            StartLightning();
+            GameScreen.PushBorders(timeToEnd);
+        }
         if (collision.tag == "Player")
         {
-            Debug.Log("Вы покидаете колесо Сансары. Вы уверены, что хотите продолжить?");
             GameData.OnEnterToNirvana?.Invoke();
         }
     }
 
-    // private void StartLightning()
-    // {
-    //     transform.DOScale(new Vector3(15f, 15f, 15f), timeToEnd).SetEase(Ease.Linear);
-    //     
-    //     //Light2D light = GetComponent<Light2D>();
-    //     lightTween = DOTween.To(()=> light.pointLightOuterRadius, 
-    //         x => light.pointLightOuterRadius = x, 30, timeToEnd).SetEase(Ease.InQuart);
-    // }
+    private void StartLightning()
+    {
+        colliderTween = DOTween.To(() => collider.radius, 
+            x => collider.radius = x, 15, timeToEnd).SetEase(Ease.InQuart);
+        
+        lightTween = DOTween.To(()=> light.pointLightOuterRadius, 
+            x => light.pointLightOuterRadius = x, 30, timeToEnd).SetEase(Ease.InQuart);
+    }
 }

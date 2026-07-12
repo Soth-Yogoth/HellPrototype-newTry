@@ -4,6 +4,8 @@ using UnityEngine.Serialization;
 
 public abstract class BaseEnemy : MonoBehaviour
 {
+    [SerializeField] protected GameObject bulletSpawner;
+    
     [SerializeField] [Min(1)] protected int maxHp;
     [SerializeField] [Min(1)] protected int moveSpeed;
     
@@ -15,6 +17,8 @@ public abstract class BaseEnemy : MonoBehaviour
     protected void Start()
     {
         health = maxHp;
+        
+        bulletSpawner.gameObject.SetActive(false);
     }
     
     public virtual void TakeDamage(int damage)

@@ -23,7 +23,7 @@ public class Projectail : MonoBehaviour
         if (playerCollider.gameObject.CompareTag("Player"))
         {
             PlayerController player = playerCollider.gameObject.GetComponent<PlayerController>();
-            player.GetHit(damage);
+            player.GetHit();
             
             return true;
         }
@@ -41,11 +41,11 @@ public class Projectail : MonoBehaviour
         }
         if (enemyCollider.gameObject.CompareTag("FinalLight"))
         {
+            Rigidbody2D rb = GetComponent<Rigidbody2D>();
+            rb.linearVelocity = -rb.linearVelocity;
+            
             if (GameData.ChanceToWin > 0)
             {
-                Rigidbody2D rb = GetComponent<Rigidbody2D>();
-                rb.linearVelocity = -rb.linearVelocity;
-                
                 GameData.ChanceToWin -= 1;
             }
             else

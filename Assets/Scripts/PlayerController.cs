@@ -7,10 +7,8 @@ using Random = System.Random;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private bool godMod = false;
-    
-    private int hp = 150;
-    public event Action OnPlayerDeath;
+    // [SerializeField] private int maxHp = 150;
+    // private int hp;
     
     [SerializeField] private float movementSpeed;
     
@@ -53,8 +51,6 @@ public class PlayerController : MonoBehaviour
         moveAction = actionMap.FindAction("Move");
         attackAction = actionMap.FindAction("Attack");
         specialAction = actionMap.FindAction("Special");
-
-        if (godMod) hp = 1500;
     }
     
     void Update()
@@ -107,20 +103,20 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Enemy") GetHit(hp);
+        if (other.tag == "Enemy") GetHit();
     }
 
-    public void GetHit(int damage)
+    public void GetHit()
     {
-        Flash(sr.color);
+        Flash();
         GameData.PlayerHp -= 1;
 
         if (GameData.PlayerHp <= 0) GameManager.GameOver();
     }
     
-    void Flash(Color color)
+    void Flash()
     {
         sr.color = Color.red;
-        sr.DOColor(color, 0.3f).SetEase(Ease.InExpo);
+        sr.DOColor(Color.white, 0.3f).SetEase(Ease.InExpo);
     }
 }
