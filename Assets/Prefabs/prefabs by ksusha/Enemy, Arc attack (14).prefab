@@ -163,10 +163,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7981403377537126066, guid: bf9f1e2ed2cfa914ea5726eec9b556b1, type: 3}
-      propertyPath: arcAngle
-      value: 360
-      objectReference: {fileID: 0}
-    - target: {fileID: 7981403377537126066, guid: bf9f1e2ed2cfa914ea5726eec9b556b1, type: 3}
       propertyPath: bulletQuantityPerShot
       value: 4
       objectReference: {fileID: 0}

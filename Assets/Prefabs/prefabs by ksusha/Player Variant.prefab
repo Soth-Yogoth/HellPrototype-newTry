@@ -9,6 +9,22 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 684392219303089016, guid: 60dd94f7363e0ba4182e4cd3f0dde291, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -9153876644557104104, guid: a08e680a3313c9c4382d23e59a66e014, type: 3}
+    - target: {fileID: 684392219303089016, guid: 60dd94f7363e0ba4182e4cd3f0dde291, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 684392219303089016, guid: 60dd94f7363e0ba4182e4cd3f0dde291, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 684392219303089016, guid: 60dd94f7363e0ba4182e4cd3f0dde291, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 684392219303089016, guid: 60dd94f7363e0ba4182e4cd3f0dde291, type: 3}
       propertyPath: m_SortingOrder
       value: 10
       objectReference: {fileID: 0}
@@ -16,6 +32,18 @@ PrefabInstance:
       propertyPath: builds.Array.size
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 4950178603107618092, guid: 60dd94f7363e0ba4182e4cd3f0dde291, type: 3}
+      propertyPath: builds.Array.data[0].sprite
+      value: 
+      objectReference: {fileID: -9153876644557104104, guid: a08e680a3313c9c4382d23e59a66e014, type: 3}
+    - target: {fileID: 4950178603107618092, guid: 60dd94f7363e0ba4182e4cd3f0dde291, type: 3}
+      propertyPath: builds.Array.data[1].sprite
+      value: 
+      objectReference: {fileID: 3041970383809997380, guid: 437b9c2be832d454c9c6e8be3aadf8c0, type: 3}
+    - target: {fileID: 4950178603107618092, guid: 60dd94f7363e0ba4182e4cd3f0dde291, type: 3}
+      propertyPath: builds.Array.data[2].sprite
+      value: 
+      objectReference: {fileID: 3536030580346488810, guid: b4465c199a8864f44813e7e5df58924e, type: 3}
     - target: {fileID: 4950178603107618092, guid: 60dd94f7363e0ba4182e4cd3f0dde291, type: 3}
       propertyPath: guns.Array.data[1].arcAngle
       value: 30
@@ -217,12 +245,24 @@ PrefabInstance:
       value: Player Variant
       objectReference: {fileID: 0}
     - target: {fileID: 6816658533001228904, guid: 60dd94f7363e0ba4182e4cd3f0dde291, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6816658533001228904, guid: 60dd94f7363e0ba4182e4cd3f0dde291, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6816658533001228904, guid: 60dd94f7363e0ba4182e4cd3f0dde291, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6816658533001228904, guid: 60dd94f7363e0ba4182e4cd3f0dde291, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.4204999
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6816658533001228904, guid: 60dd94f7363e0ba4182e4cd3f0dde291, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7.3355603
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6816658533001228904, guid: 60dd94f7363e0ba4182e4cd3f0dde291, type: 3}
       propertyPath: m_LocalPosition.z
