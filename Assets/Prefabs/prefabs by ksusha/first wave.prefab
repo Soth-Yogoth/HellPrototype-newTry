@@ -237,10 +237,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SimpleEnemy
   bulletSpawner: {fileID: 1700672048691492757}
-  maxHp: 0
+  maxHp: 150
   moveSpeed: 1
-  health: 1
-  bulletSpawner: {fileID: 1700672048691492757}
 --- !u!1 &1074535621542581099
 GameObject:
   m_ObjectHideFlags: 0
@@ -478,10 +476,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SimpleEnemy
   bulletSpawner: {fileID: 335721717128132751}
-  maxHp: 0
+  maxHp: 150
   moveSpeed: 1
-  health: 1
-  bulletSpawner: {fileID: 335721717128132751}
 --- !u!1 &1290813232980608487
 GameObject:
   m_ObjectHideFlags: 0
@@ -653,10 +649,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SimpleEnemy
   bulletSpawner: {fileID: 2094791871042225418}
-  maxHp: 0
+  maxHp: 150
   moveSpeed: 1
-  health: 1
-  bulletSpawner: {fileID: 2094791871042225418}
 --- !u!1 &1541658880731959750
 GameObject:
   m_ObjectHideFlags: 0
@@ -1224,10 +1218,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SimpleEnemy
   bulletSpawner: {fileID: 5817874427300715011}
-  maxHp: 0
+  maxHp: 150
   moveSpeed: 1
-  health: 1
-  bulletSpawner: {fileID: 5817874427300715011}
 --- !u!1 &3697739749095865005
 GameObject:
   m_ObjectHideFlags: 0
@@ -1472,10 +1464,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SimpleEnemy
   bulletSpawner: {fileID: 2383446660300004026}
-  maxHp: 0
+  maxHp: 150
   moveSpeed: 1
-  health: 1
-  bulletSpawner: {fileID: 2383446660300004026}
 --- !u!1 &4654339866825083711
 GameObject:
   m_ObjectHideFlags: 0
@@ -1713,10 +1703,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SimpleEnemy
   bulletSpawner: {fileID: 7205112795879616598}
-  maxHp: 0
+  maxHp: 150
   moveSpeed: 1
-  health: 1
-  bulletSpawner: {fileID: 7205112795879616598}
 --- !u!1 &5152821101826773125
 GameObject:
   m_ObjectHideFlags: 0
@@ -1888,10 +1876,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SimpleEnemy
   bulletSpawner: {fileID: 6719532172544768330}
-  maxHp: 0
+  maxHp: 150
   moveSpeed: 1
-  health: 1
-  bulletSpawner: {fileID: 6719532172544768330}
 --- !u!1 &5589877285540360953
 GameObject:
   m_ObjectHideFlags: 0
@@ -2261,10 +2247,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SimpleEnemy
   bulletSpawner: {fileID: 5589877285540360953}
-  maxHp: 0
+  maxHp: 150
   moveSpeed: 1
-  health: 1
-  bulletSpawner: {fileID: 5589877285540360953}
 --- !u!1 &6366779696876551805
 GameObject:
   m_ObjectHideFlags: 0
@@ -2436,10 +2420,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SimpleEnemy
   bulletSpawner: {fileID: 1074535621542581099}
-  maxHp: 0
+  maxHp: 150
   moveSpeed: 1
-  health: 1
-  bulletSpawner: {fileID: 1074535621542581099}
 --- !u!1 &6658619480419395390
 GameObject:
   m_ObjectHideFlags: 0
@@ -2611,10 +2593,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SimpleEnemy
   bulletSpawner: {fileID: 4654339866825083711}
-  maxHp: 0
+  maxHp: 150
   moveSpeed: 1
-  health: 1
-  bulletSpawner: {fileID: 4654339866825083711}
 --- !u!1 &6719532172544768330
 GameObject:
   m_ObjectHideFlags: 0
@@ -2852,10 +2832,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SimpleEnemy
   bulletSpawner: {fileID: 7928462225476380962}
-  maxHp: 0
+  maxHp: 150
   moveSpeed: 1
-  health: 1
-  bulletSpawner: {fileID: 7928462225476380962}
 --- !u!1 &7205112795879616598
 GameObject:
   m_ObjectHideFlags: 0
@@ -3093,10 +3071,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SimpleEnemy
   bulletSpawner: {fileID: 1848787595826012954}
-  maxHp: 0
+  maxHp: 150
   moveSpeed: 1
-  health: 1
-  bulletSpawner: {fileID: 1848787595826012954}
 --- !u!1 &7899320172147312650
 GameObject:
   m_ObjectHideFlags: 0
@@ -3268,10 +3244,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SimpleEnemy
   bulletSpawner: {fileID: 1541658880731959750}
-  maxHp: 0
+  maxHp: 150
   moveSpeed: 1
-  health: 1
-  bulletSpawner: {fileID: 1541658880731959750}
 --- !u!1 &7928462225476380962
 GameObject:
   m_ObjectHideFlags: 0
@@ -3509,10 +3483,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SimpleEnemy
   bulletSpawner: {fileID: 1545926289791385004}
-  maxHp: 0
+  maxHp: 150
   moveSpeed: 1
-  health: 1
-  bulletSpawner: {fileID: 1545926289791385004}
 --- !u!1 &8824142245132386474
 GameObject:
   m_ObjectHideFlags: 0
@@ -3684,10 +3656,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SimpleEnemy
   bulletSpawner: {fileID: 6054028709607568981}
-  maxHp: 0
+  maxHp: 150
   moveSpeed: 1
-  health: 1
-  bulletSpawner: {fileID: 6054028709607568981}
 --- !u!1001 &198302931796012492
 PrefabInstance:
   m_ObjectHideFlags: 0

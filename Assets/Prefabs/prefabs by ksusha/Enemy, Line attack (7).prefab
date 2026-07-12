@@ -9,6 +9,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -1142781935821013171, guid: 5dd9fd6807e957c49ab4915bb917a68e, type: 3}
+      propertyPath: maxHp
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: -1142781935821013171, guid: 5dd9fd6807e957c49ab4915bb917a68e, type: 3}
       propertyPath: moveSpeed
       value: 2
       objectReference: {fileID: 0}

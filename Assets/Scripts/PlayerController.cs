@@ -7,9 +7,6 @@ using Random = System.Random;
 
 public class PlayerController : MonoBehaviour
 {
-    // [SerializeField] private int maxHp = 150;
-    // private int hp;
-    
     [SerializeField] private float movementSpeed;
     
     [SerializeField] [Range(0, 1)] private float cooldown;

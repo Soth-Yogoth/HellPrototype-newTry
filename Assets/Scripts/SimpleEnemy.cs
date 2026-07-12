@@ -2,8 +2,6 @@ using UnityEngine;
 
 public class SimpleEnemy : BaseEnemy
 {
-    //[SerializeField] protected GameObject bulletSpawner;
-    
     Rigidbody2D rb;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
