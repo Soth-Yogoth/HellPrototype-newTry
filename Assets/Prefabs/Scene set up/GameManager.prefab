@@ -49,6 +49,7 @@ MonoBehaviour:
   secondWave: {fileID: 3697739749095865005, guid: 82b2c25469cf22f4cb8e854759f2ec33, type: 3}
   firstBossPrefab: {fileID: 4963321320723634246, guid: fdb3819d01a07dc41a78f9f8c68d2607, type: 3}
   secondBossPrefab: {fileID: 3659931097113485129, guid: 9872d81bde1c9cf4fa6ef2412d838fed, type: 3}
-  player: {fileID: 0}
+  Player: {fileID: 5562302508478169900, guid: 60dd94f7363e0ba4182e4cd3f0dde291, type: 3}
+  HpBar: {fileID: 7200024648026957979, guid: 5ec8921af814f1046bf581ec1265864e, type: 3}
   WinPanel: {fileID: 6382412330865738263, guid: a72c37e9013019543bcf69fa668047db, type: 3}
   GameOverPanel: {fileID: 9186938755335524636, guid: 9d3c8c1e12a47864cb888bd56334c7b8, type: 3}

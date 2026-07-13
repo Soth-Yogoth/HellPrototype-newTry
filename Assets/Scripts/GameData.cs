@@ -22,8 +22,6 @@ public class GameData : ScriptableObject
 
     public static void Reset()
     {
-        Debug.Log("GameData Reset");
-        
         chanceToWin = 5;
         
         bossesKilled = 0;

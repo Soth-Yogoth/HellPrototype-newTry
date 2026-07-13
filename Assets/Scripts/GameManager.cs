@@ -12,16 +12,19 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject firstBossPrefab;
     [SerializeField] private GameObject secondBossPrefab;
     
-    [SerializeField] private GameObject player;
+    [SerializeField] private GameObject Player;
     
+    [SerializeField] private GameObject HpBar;
     [SerializeField] private GameObject WinPanel;
     [SerializeField] private GameObject GameOverPanel;
-
-    [SerializeField] private GameObject BaseScene;
-
-    private GameObject[] enemyWaves;
-    private GameObject[] bosses;
+    //[SerializeField] private GameObject MainMenu;
     
+    private static GameObject[] enemyWaves;
+    private static GameObject[] bosses;
+
+    private static GameObject player;
+    
+    private static GameObject hpBar;
     private static GameObject winPanel;
     private static GameObject gameOverPanel;
     
@@ -34,6 +37,8 @@ public class GameManager : MonoBehaviour
     {
         bosses = new GameObject[] { firstBossPrefab, secondBossPrefab };
         enemyWaves = new GameObject[] { firstWave, secondWave };
+
+        player = Player;
         
         GameData.OnAllMobsDead += OnAllMobsDead;
         GameData.OnBossKilled += SpawnMobs;
@@ -44,15 +49,22 @@ public class GameManager : MonoBehaviour
         SecondScreenCorner = transform.position + (screenBounds.localScale / 2);
 
         BaseEnemy.PlayerTransform = player.transform;
-        
+
+        hpBar = HpBar;
         winPanel = WinPanel;
         gameOverPanel = GameOverPanel;
-        baseScene = BaseScene;
         
         SpawnMobs();
     }
 
-    public void SpawnMobs()
+    // public static void OnStartGame()
+    // {
+    //     Instantiate(player);
+    //     Instantiate(hpBar);
+    //     SpawnMobs();
+    // }
+
+    public static void SpawnMobs()
     {
         Instantiate(enemyWaves[GameData.BossesKilled]);
     }
@@ -72,11 +84,6 @@ public class GameManager : MonoBehaviour
     {
         GameData.OnGameOver -= GameOver;
         Instantiate(winPanel);
-    }
-
-    public static void OnStartGame()
-    {
-        Instantiate(baseScene);
     }
 
     public static void Reset()

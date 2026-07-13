@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] [Min(1)] private float shapeshiftInterval = 10;
     private float shapeshiftTimer;
     
+    private Animator animator;
     private SpriteRenderer sr;
     private Rigidbody2D rb;
 
@@ -30,6 +31,7 @@ public class PlayerController : MonoBehaviour
     
     void Start()
     {
+        animator = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
         
@@ -93,6 +95,7 @@ public class PlayerController : MonoBehaviour
         currentBuild = weaponSystem.Builds[i];
         
         //
+        animator.SetInteger("BuildIndex", i);
         sr.sprite = currentBuild.GetSprite();
         movementSpeed = currentBuild.GetMoveSpeed();
         cooldown = currentBuild.GetCooldown();
