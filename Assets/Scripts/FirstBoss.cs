@@ -107,7 +107,7 @@ public class FirstBoss : BaseEnemy
     
     protected override void Death()
     {
-        GameData.PlayerHp += 1;
+        GameData.PlayerHp += GameData.PlayerHp < 4 ? 1 : 0;
         GameData.BossesKilled++;
         Destroy(gameObject);
     }

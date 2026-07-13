@@ -11,7 +11,7 @@ public class Projectail : MonoBehaviour
     
     public ObjectPool<GameObject> ObjectPool { get; set; }
     public bool IsReleased { get; set; }
-    
+
 
     public void SetHostType(String targetTag)
     {

@@ -70,7 +70,8 @@ public class GameManager : MonoBehaviour
     }
 
     private void OnAllMobsDead()
-    { 
+    {
+        GameData.PlayerHp += GameData.PlayerHp < 4 ? 1 : 0;
         Instantiate(bosses[GameData.BossesKilled]);
     }
     
