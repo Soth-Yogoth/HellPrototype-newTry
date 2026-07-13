@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] [Min(1)] private float shapeshiftInterval = 10;
     private float shapeshiftTimer;
     
+    private AudioSource audioSource;
     private Animator animator;
     private SpriteRenderer sr;
     private Rigidbody2D rb;
@@ -31,6 +32,7 @@ public class PlayerController : MonoBehaviour
     
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
@@ -94,7 +96,7 @@ public class PlayerController : MonoBehaviour
         int i = random.Next(weaponSystem.Builds.Length);
         currentBuild = weaponSystem.Builds[i];
         
-        //
+        audioSource.Play();
         animator.SetInteger("BuildIndex", i);
         sr.sprite = currentBuild.GetSprite();
         movementSpeed = currentBuild.GetMoveSpeed();

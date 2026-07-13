@@ -9,6 +9,7 @@ TagManager:
   - GameScreen
   - FinalLight
   - BossFinalLine
+  - MobFinalLine
   layers:
   - Default
   - TransparentFX
@@ -45,6 +46,9 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Budda
+    uniqueID: 967619503
     locked: 0
   m_RenderingLayers:
   - Default

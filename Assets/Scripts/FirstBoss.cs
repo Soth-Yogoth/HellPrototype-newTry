@@ -18,6 +18,9 @@ public class FirstBoss : BaseEnemy
 
     private State currentState = State.Base;
     
+    private Animator animator;
+    private AudioSource audioSource;
+    
     [SerializeField] [Min(0)] private float movementBorder = 5; //Решение временное
     private Vector2 targetAncor;
     private bool isMovingToRight = true;
@@ -33,6 +36,8 @@ public class FirstBoss : BaseEnemy
     {
         cooldownTimer = baseDuration;
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
         
         rb.linearVelocity = Vector2.down * moveSpeed;
     }
@@ -52,7 +57,8 @@ public class FirstBoss : BaseEnemy
                 case State.Base:
                     currentState = State.BaseCooldown;
                     bulletSpawner.gameObject.SetActive(false);
-                    cooldownTimer = cooldown;
+                    animator.SetTrigger("Special");
+                    cooldownTimer = animator.GetCurrentAnimatorClipInfo(0).Length;
                     break;
                 case State.Special:
                     currentState = State.SpecialCooldown;
@@ -62,6 +68,7 @@ public class FirstBoss : BaseEnemy
                 case State.BaseCooldown:
                     currentState = State.Special;
                     specialAttack.gameObject.SetActive(true);
+                    audioSource.Play();
                     cooldownTimer = specialDuration;
                     break;
                 case State.SpecialCooldown:

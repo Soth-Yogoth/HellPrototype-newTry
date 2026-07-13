@@ -5,7 +5,7 @@ using UnityEngine.Rendering.Universal;
 public class FinalBoss : MonoBehaviour
 {
     [Header("Light")]
-    [SerializeField] private Light2D light;
+    [SerializeField] private SpriteRenderer lightSprite;
     [SerializeField][Min(0)] private float timeToEnd;
     
     private Tween lightTween;
@@ -61,7 +61,6 @@ public class FinalBoss : MonoBehaviour
         colliderTween = DOTween.To(() => collider.radius, 
             x => collider.radius = x, 15, timeToEnd).SetEase(Ease.InQuart);
         
-        lightTween = DOTween.To(()=> light.pointLightOuterRadius, 
-            x => light.pointLightOuterRadius = x, 30, timeToEnd).SetEase(Ease.InQuart);
+        lightTween = lightSprite.transform.DOScale(15, timeToEnd).SetEase(Ease.InQuart);
     }
 }

@@ -35,6 +35,8 @@ public class GameManager : MonoBehaviour
     
     void Start()
     {
+        Time.timeScale = 0;
+        
         bosses = new GameObject[] { firstBossPrefab, secondBossPrefab };
         enemyWaves = new GameObject[] { firstWave, secondWave };
 
@@ -55,6 +57,11 @@ public class GameManager : MonoBehaviour
         gameOverPanel = GameOverPanel;
         
         SpawnMobs();
+    }
+
+    public static void Play()
+    {
+        Time.timeScale = 1;
     }
 
     // public static void OnStartGame()
@@ -97,7 +104,7 @@ public class GameManager : MonoBehaviour
 
     public static void QuitGame()
     {
-        Debug.Log("Quit");
+        Application.Quit();
     }
 
     void OnDestroy()
