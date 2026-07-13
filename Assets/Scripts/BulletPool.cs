@@ -36,6 +36,8 @@ public class BulletPool : MonoBehaviour
     {
         Projectail projectail = bullet.GetComponent<Projectail>();
         projectail.gameObject.SetActive(true);
+        
+        projectail.IsReleased = false;
     }
 
     void OnReleaseFromPool(GameObject bullet)

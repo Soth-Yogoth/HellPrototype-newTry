@@ -12,7 +12,6 @@ public class Projectail : MonoBehaviour
     public ObjectPool<GameObject> ObjectPool { get; set; }
     public bool IsReleased { get; set; }
 
-
     public void SetHostType(String targetTag)
     {
         Hit = targetTag == "Player" ? HitEnemy : HitPlayer;
@@ -55,6 +54,7 @@ public class Projectail : MonoBehaviour
         //TODO: но что если Hit == null ? 
         if (Hit(other) && !IsReleased)
         {
+            IsReleased = true;
             ObjectPool.Release(gameObject);
         }
     }
@@ -63,6 +63,7 @@ public class Projectail : MonoBehaviour
     {
         if (other.tag == "GameScreen" && !IsReleased)
         {
+            IsReleased = true;
             ObjectPool.Release(gameObject);
         }
     }
