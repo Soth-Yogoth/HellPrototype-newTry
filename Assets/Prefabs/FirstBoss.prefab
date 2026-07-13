@@ -290,7 +290,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_MaskInteraction: 0
   m_Sprite: {fileID: -6248741079362886434, guid: 1fd9a79e3e4e6c141a52a85d309fc331, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -378,12 +378,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FirstBoss
   bulletSpawner: {fileID: 3417508562629583186}
-  maxHp: 1200
+  maxHp: 6000
   moveSpeed: 1
-  health: 1200
   specialDuration: 4
   baseDuration: 15
-  cooldown: 3
+  cooldown: 2
   movementBorder: 5
   specialAttack: {fileID: 9212302639879084590}
   hpBar: {fileID: 2448746619350982702}
@@ -611,8 +610,16 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7981403377537126066, guid: bf9f1e2ed2cfa914ea5726eec9b556b1, type: 3}
+      propertyPath: bulletSpeed
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7981403377537126066, guid: bf9f1e2ed2cfa914ea5726eec9b556b1, type: 3}
+      propertyPath: fireInterval
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7981403377537126066, guid: bf9f1e2ed2cfa914ea5726eec9b556b1, type: 3}
       propertyPath: bulletQuantityPerShot
-      value: 20
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 8786252139735914652, guid: bf9f1e2ed2cfa914ea5726eec9b556b1, type: 3}
       propertyPath: m_Name
