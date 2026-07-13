@@ -17,7 +17,7 @@ public abstract class BaseEnemy : MonoBehaviour
     protected static Transform playerTransform;
     public static Transform PlayerTransform { set { playerTransform = value; } } //Вызов из GameManager
 
-    protected void Start()
+    protected void Awake()
     {
         health = maxHp;
         

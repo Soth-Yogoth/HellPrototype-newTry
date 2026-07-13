@@ -19,6 +19,8 @@ public class GameScreen : MonoBehaviour
 
     static public void PushBorders(float timer)
     {
+        Debug.Log("PushBorders");
+        
         leftBorder.DOLocalMoveX(leftBorder.position.x - 10, timer).SetEase(Ease.InQuart);
         rightBorder.DOLocalMoveX(rightBorder.position.x + 10, timer).SetEase(Ease.InQuart);
     }

@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using DG.Tweening;
 
 public class PlayerHP : MonoBehaviour
 {
@@ -24,7 +25,12 @@ public class PlayerHP : MonoBehaviour
 
         for (int i = 0; i < heartsQuantity; i++)
         {
-            Instantiate(heartPrefab, transform);
+            GameObject hp = Instantiate(heartPrefab, transform);
+            
+            hp.transform.DOLocalMoveY(heartPrefab.transform.localPosition.y + 0.1f, 0.2f)
+                .SetEase(Ease.OutSine)
+                .OnComplete(() => 
+                    hp.transform.DOLocalMoveY(heartPrefab.transform.localPosition.y - 0.1f, 0.2f).SetEase(Ease.InQuad));
         }
     }
 

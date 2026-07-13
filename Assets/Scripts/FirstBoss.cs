@@ -33,8 +33,6 @@ public class FirstBoss : BaseEnemy
 
     void Start()
     {
-        base.Start();
-        
         cooldownTimer = baseDuration;
         rb = GetComponent<Rigidbody2D>();
         
@@ -109,6 +107,7 @@ public class FirstBoss : BaseEnemy
     
     protected override void Death()
     {
+        GameData.PlayerHp += 1;
         GameData.BossesKilled++;
         Destroy(gameObject);
     }

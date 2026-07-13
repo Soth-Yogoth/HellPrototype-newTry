@@ -41,18 +41,11 @@ public class Projectail : MonoBehaviour
         }
         if (enemyCollider.gameObject.CompareTag("FinalLight"))
         {
+            FinalBoss light = enemyCollider.gameObject.GetComponent<FinalBoss>();
+            light.TakeDamage();
+            
             Rigidbody2D rb = GetComponent<Rigidbody2D>();
             rb.linearVelocity = -rb.linearVelocity;
-            
-            if (GameData.ChanceToWin > 0)
-            {
-                GameData.ChanceToWin -= 1;
-            }
-            else
-            {
-                Debug.Log("Catch!");
-                GameManager.GameOver();
-            }
         }
         return false;
     }

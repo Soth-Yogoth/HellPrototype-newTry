@@ -6,7 +6,7 @@ public delegate void OnWinDelegate();
 [CreateAssetMenu(fileName = "GameData", menuName = "Scriptable Objects/GameData")]
 public class GameData : ScriptableObject
 {
-    private static int chanceToWin = 3;
+    private static int chanceToWin = 5;
 
     private static int bossesKilled = 0;
     private static int mobQuantity = 0;
@@ -24,7 +24,7 @@ public class GameData : ScriptableObject
     {
         Debug.Log("GameData Reset");
         
-        chanceToWin = 3;
+        chanceToWin = 5;
         
         bossesKilled = 0;
         mobQuantity = 0;

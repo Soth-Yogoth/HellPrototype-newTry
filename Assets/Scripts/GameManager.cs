@@ -17,11 +17,15 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject WinPanel;
     [SerializeField] private GameObject GameOverPanel;
 
+    [SerializeField] private GameObject BaseScene;
+
     private GameObject[] enemyWaves;
     private GameObject[] bosses;
     
     private static GameObject winPanel;
     private static GameObject gameOverPanel;
+    
+    private static GameObject baseScene;
     
     public static Vector2 FirstScreenCorner;
     public static Vector2 SecondScreenCorner;
@@ -43,6 +47,7 @@ public class GameManager : MonoBehaviour
         
         winPanel = WinPanel;
         gameOverPanel = GameOverPanel;
+        baseScene = BaseScene;
         
         SpawnMobs();
     }
@@ -53,9 +58,8 @@ public class GameManager : MonoBehaviour
     }
 
     private void OnAllMobsDead()
-    {
-        GameObject boss = Instantiate(bosses[GameData.BossesKilled]);
-        //boss.SetActive(true);
+    { 
+        Instantiate(bosses[GameData.BossesKilled]);
     }
     
     public static void GameOver()
@@ -68,6 +72,11 @@ public class GameManager : MonoBehaviour
     {
         GameData.OnGameOver -= GameOver;
         Instantiate(winPanel);
+    }
+
+    public static void OnStartGame()
+    {
+        Instantiate(baseScene);
     }
 
     public static void Reset()

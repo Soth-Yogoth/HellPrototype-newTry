@@ -29,6 +29,17 @@ public class FinalBoss : MonoBehaviour
         colliderTween?.Kill();
     }
 
+    public void TakeDamage()
+    {
+        if (!isReady) return;
+        
+        if (GameData.ChanceToWin > 0)
+        {
+            GameData.ChanceToWin -= 1;
+        }
+        else GameManager.GameOver();
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "BossFinalLine")
