@@ -23,8 +23,6 @@ public class FirstBoss : BaseEnemy
     private bool isMovingToRight = true;
     private Vector2 direction = Vector2.down;
 
-    private bool isReady = false;
-
     //[SerializeField] protected GameObject bulletSpawner;
     [SerializeField] private GameObject specialAttack;
     [SerializeField] private HpBar hpBar;
@@ -120,7 +118,7 @@ public class FirstBoss : BaseEnemy
         return direction.x > 0 ? angle : -angle;
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    protected new void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "BossFinalLine")
         {

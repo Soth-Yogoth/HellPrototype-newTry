@@ -11,6 +11,7 @@ public abstract class BaseEnemy : MonoBehaviour
     [SerializeField] [Min(1)] protected int moveSpeed;
     
     protected int health;
+    protected bool isReady = false;
     
     protected SpriteRenderer sr;
     
@@ -27,6 +28,8 @@ public abstract class BaseEnemy : MonoBehaviour
     
     public virtual void TakeDamage(int damage)
     {
+        if (!isReady) return;
+        
         if (health - damage <= 0) Death();
         else
         {

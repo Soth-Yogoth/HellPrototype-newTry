@@ -3,8 +3,6 @@ using UnityEngine;
 public class SimpleEnemy : BaseEnemy
 {
     Rigidbody2D rb;
-
-    private int id;
     bool isDead = false;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -14,17 +12,15 @@ public class SimpleEnemy : BaseEnemy
         
         rb = GetComponent<Rigidbody2D>();
         GameData.MobQuantity++;
-        
-        id = GameData.MobQuantity;
     }
     
-    protected void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("GameScreen"))
-        {
-            bulletSpawner.gameObject.SetActive(true);
-        }
-    }
+    // protected void OnTriggerEnter2D(Collider2D other)
+    // {
+    //     if (other.CompareTag("GameScreen"))
+    //     {
+    //         bulletSpawner.gameObject.SetActive(true);
+    //     }
+    // }
 
     // Update is called once per frame
     void Update()
@@ -48,5 +44,14 @@ public class SimpleEnemy : BaseEnemy
         
         isDead = true;
         GameData.MobQuantity--;
+    }
+    
+    protected void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("MobFinalLine"))
+        {
+            bulletSpawner.SetActive(true);
+            isReady = true;
+        }
     }
 }
