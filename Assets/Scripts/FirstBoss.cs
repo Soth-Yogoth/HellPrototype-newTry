@@ -57,12 +57,13 @@ public class FirstBoss : BaseEnemy
                 case State.Base:
                     currentState = State.BaseCooldown;
                     bulletSpawner.gameObject.SetActive(false);
-                    animator.SetTrigger("Special");
+                    animator.SetBool("Special", true);
                     cooldownTimer = animator.GetCurrentAnimatorClipInfo(0).Length;
                     break;
                 case State.Special:
                     currentState = State.SpecialCooldown;
                     specialAttack.gameObject.SetActive(false);
+                    animator.SetBool("Special", false);
                     cooldownTimer = cooldown;
                     break;
                 case State.BaseCooldown:
@@ -97,16 +98,11 @@ public class FirstBoss : BaseEnemy
     
     public override void TakeDamage(int damage)
     {
-        if(!isReady)
-        {
-            return;
-        }
+        if(!isReady) return;
         
-        if (health - damage <= 0)
-        {
-            Death();
-        }
+        if (health - damage <= 0) Death();
         else health -= damage;
+        
         hpBar.UpdateHpBar(health, maxHp);
     }
     

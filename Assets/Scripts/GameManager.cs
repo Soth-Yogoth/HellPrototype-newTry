@@ -36,6 +36,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         Time.timeScale = 0;
+        if (SceneManager.GetSceneByName("MainMenu").isLoaded) SceneManager.UnloadSceneAsync("MainMenu");
         
         bosses = new GameObject[] { firstBossPrefab, secondBossPrefab };
         enemyWaves = new GameObject[] { firstWave, secondWave };
