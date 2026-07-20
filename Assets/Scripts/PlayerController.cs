@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     
     [SerializeField] [Min(1)] private float shapeshiftInterval = 10;
     private float shapeshiftTimer;
+    private float invincibleTimer;
     
     private AudioSource audioSource;
     private Animator animator;
@@ -38,7 +39,8 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         
         weaponSystem = GetComponent<BuildSystem>();
-        
+
+        invincibleTimer = 0;
         shapeshiftTimer = shapeshiftInterval;
         currentBuild = weaponSystem.Builds[0];
         
@@ -65,6 +67,7 @@ public class PlayerController : MonoBehaviour
         }
         
         shapeshiftTimer -= Time.deltaTime;
+        invincibleTimer -= Time.deltaTime;
         
         Move();
         if(cooldownTimer < 0 && attackAction.inProgress)
@@ -110,6 +113,9 @@ public class PlayerController : MonoBehaviour
 
     public void GetHit()
     {
+        if (invincibleTimer > 0) return;
+        invincibleTimer = 0.5f;
+        
         Flash();
         GameData.PlayerHp -= 1;
 
@@ -119,6 +125,6 @@ public class PlayerController : MonoBehaviour
     void Flash()
     {
         sr.color = Color.red;
-        sr.DOColor(Color.white, 0.3f).SetEase(Ease.InExpo);
+        sr.DOColor(Color.white, 0.5f).SetEase(Ease.InExpo);
     }
 }

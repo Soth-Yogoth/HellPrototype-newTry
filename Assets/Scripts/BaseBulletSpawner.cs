@@ -4,12 +4,11 @@ public abstract class BaseBulletSpawner : MonoBehaviour
 {
     protected BulletPool pool;
     
-    [SerializeField] private float fireInterval = 1f;
+    [SerializeField] public float fireInterval = 1f;
     private float timer = 0f;
     
-    [SerializeField] [Range(1, 100)] protected int bulletQuantityPerShot;
-    [SerializeField] [Range(1, 100)] protected float bulletSpeed = 1f;
-    [SerializeField] protected float delay;
+    [SerializeField] [Range(1, 100)] public int bulletQuantityPerShot;
+    [SerializeField] [Range(1, 100)] public float bulletSpeed = 1f;
 
     public bool Enabled = true;
     

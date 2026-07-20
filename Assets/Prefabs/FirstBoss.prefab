@@ -502,7 +502,7 @@ MonoBehaviour:
   maxHp: 6000
   moveSpeed: 1
   specialDuration: 4
-  baseDuration: 15
+  baseDuration: 10
   cooldown: 2
   movementBorder: 5
   specialAttack: {fileID: 9212302639879084590}
@@ -732,15 +732,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7981403377537126066, guid: bf9f1e2ed2cfa914ea5726eec9b556b1, type: 3}
       propertyPath: bulletSpeed
-      value: 7
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7981403377537126066, guid: bf9f1e2ed2cfa914ea5726eec9b556b1, type: 3}
       propertyPath: fireInterval
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7981403377537126066, guid: bf9f1e2ed2cfa914ea5726eec9b556b1, type: 3}
       propertyPath: bulletQuantityPerShot
-      value: 30
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 8786252139735914652, guid: bf9f1e2ed2cfa914ea5726eec9b556b1, type: 3}
       propertyPath: m_Name

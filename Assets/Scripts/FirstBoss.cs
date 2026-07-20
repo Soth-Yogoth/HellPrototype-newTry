@@ -32,6 +32,8 @@ public class FirstBoss : BaseEnemy
 
     private Rigidbody2D rb;
 
+    private int difficulty = 0;
+
     void Start()
     {
         cooldownTimer = baseDuration;
@@ -76,6 +78,7 @@ public class FirstBoss : BaseEnemy
                     currentState = State.Base;
                     bulletSpawner.gameObject.SetActive(true);
                     cooldownTimer = baseDuration;
+                    MakeHarder();
                     break;
             }
         }
@@ -128,5 +131,18 @@ public class FirstBoss : BaseEnemy
             bulletSpawner.SetActive(true);
             isReady = true;
         }
+    }
+
+    private void MakeHarder()
+    {
+        if (difficulty == 3) return;
+        
+        BaseBulletSpawner spawner = bulletSpawner.GetComponent<BaseBulletSpawner>();
+
+        spawner.bulletQuantityPerShot += 4;
+        spawner.fireInterval -= difficulty / 10f;
+        spawner.bulletSpeed += difficulty;
+        
+        difficulty++;
     }
 }
