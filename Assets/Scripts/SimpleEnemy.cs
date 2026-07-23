@@ -8,18 +8,8 @@ public class SimpleEnemy : BaseEnemy
     new void Awake()
     {
         base.Awake();
-        
         rb = GetComponent<Rigidbody2D>();
-        //GameData.MobQuantity++;
     }
-    
-    // protected void OnTriggerEnter2D(Collider2D other)
-    // {
-    //     if (other.CompareTag("GameScreen"))
-    //     {
-    //         bulletSpawner.gameObject.SetActive(true);
-    //     }
-    // }
 
     // Update is called once per frame
     void Update()

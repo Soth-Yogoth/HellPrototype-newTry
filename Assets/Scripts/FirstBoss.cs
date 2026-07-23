@@ -25,8 +25,7 @@ public class FirstBoss : BaseEnemy
     private Vector2 targetAncor;
     private bool isMovingToRight = true;
     private Vector2 direction = Vector2.down;
-
-    //[SerializeField] protected GameObject bulletSpawner;
+    
     [SerializeField] private GameObject specialAttack;
     [SerializeField] private HpBar hpBar;
 

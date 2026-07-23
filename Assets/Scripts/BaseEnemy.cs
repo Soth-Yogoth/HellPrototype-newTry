@@ -62,7 +62,6 @@ public abstract class BaseEnemy : MonoBehaviour
 
     protected virtual void Death()
     {
-        
         if(isDead) return;
         
         Destroy(gameObject);
