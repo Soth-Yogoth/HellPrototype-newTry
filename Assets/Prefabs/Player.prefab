@@ -82,7 +82,7 @@ SpriteRenderer:
   m_SortingOrder: 11
   m_MaskInteraction: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.7411765, g: 0.39607847, b: 0.8705883, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -123,7 +123,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5371213264389082248}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -8.26, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
@@ -284,7 +284,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::WeaponSystem
   builds:
   - sprite: {fileID: -9153876644557104104, guid: a08e680a3313c9c4382d23e59a66e014, type: 3}
-    moveSpeed: 6
+    moveSpeed: 5
     bulletCount: 1
     cooldown: 0.25
     arcAngle: 1
@@ -298,7 +298,7 @@ MonoBehaviour:
     bulletSpeed: 7
     impulseFactor: 0.4
   - sprite: {fileID: 3536030580346488810, guid: b4465c199a8864f44813e7e5df58924e, type: 3}
-    moveSpeed: 5
+    moveSpeed: 4
     bulletCount: 1
     cooldown: 0.25
     arcAngle: 1

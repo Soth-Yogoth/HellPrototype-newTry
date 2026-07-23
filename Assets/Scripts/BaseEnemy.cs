@@ -12,6 +12,7 @@ public abstract class BaseEnemy : MonoBehaviour
     
     protected int health;
     protected bool isReady = false;
+    protected bool isDead = false;
     
     protected SpriteRenderer sr;
     
@@ -20,6 +21,8 @@ public abstract class BaseEnemy : MonoBehaviour
 
     protected void Awake()
     {
+        Debug.Log(gameObject + " Awake");
+        GameData.MobQuantity++;
         health = maxHp;
         
         bulletSpawner.gameObject.SetActive(false);
@@ -59,6 +62,12 @@ public abstract class BaseEnemy : MonoBehaviour
 
     protected virtual void Death()
     {
+        
+        if(isDead) return;
+        
         Destroy(gameObject);
+        
+        isDead = true;
+        GameData.MobQuantity--;
     }
 }

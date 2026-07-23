@@ -8,7 +8,7 @@ public class GameData : ScriptableObject
 {
     private static int chanceToWin = 5;
 
-    private static int bossesKilled = 0;
+    //private static int bossesKilled = 0;
     private static int mobQuantity = 0;
     private static int score = 0;
     
@@ -24,7 +24,7 @@ public class GameData : ScriptableObject
     {
         chanceToWin = 5;
         
-        bossesKilled = 0;
+        //bossesKilled = 0;
         mobQuantity = 0;
         playerHp = 3;
     }
@@ -49,16 +49,16 @@ public class GameData : ScriptableObject
         }
     }
     
-    public static int BossesKilled
-    {
-        get { return bossesKilled; } 
-        set
-        {
-            bossesKilled = value;
-            OnBossKilled?.Invoke();
-        }
-    }
-
+    // public static int BossesKilled
+    // {
+    //     get { return bossesKilled; } 
+    //     set
+    //     {
+    //         bossesKilled = value;
+    //         OnBossKilled?.Invoke();
+    //     }
+    // }
+    //
     public static int MobQuantity
     {
         get { return mobQuantity; } 

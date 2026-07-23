@@ -6,11 +6,13 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private Transform screenBounds;
     
-    [SerializeField] private GameObject firstWave;
-    [SerializeField] private GameObject secondWave;
+    [SerializeField] private GameObject[] Enemies;
     
-    [SerializeField] private GameObject firstBossPrefab;
-    [SerializeField] private GameObject secondBossPrefab;
+    // [SerializeField] private GameObject firstWave;
+    // [SerializeField] private GameObject secondWave;
+    //
+    // [SerializeField] private GameObject firstBossPrefab;
+    // [SerializeField] private GameObject secondBossPrefab;
     
     [SerializeField] private GameObject Player;
     
@@ -19,8 +21,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject GameOverPanel;
     //[SerializeField] private GameObject MainMenu;
     
-    private static GameObject[] enemyWaves;
-    private static GameObject[] bosses;
+    // private static GameObject[] enemyWaves;
+    // private static GameObject[] bosses;
+
+    private static GameObject[] enemies;
 
     private static GameObject player;
     
@@ -32,19 +36,23 @@ public class GameManager : MonoBehaviour
     
     public static Vector2 FirstScreenCorner;
     public static Vector2 SecondScreenCorner;
+
+    private static int level = 0;
     
     void Start()
     {
         Time.timeScale = 0;
         if (SceneManager.GetSceneByName("MainMenu").isLoaded) SceneManager.UnloadSceneAsync("MainMenu");
         
-        bosses = new GameObject[] { firstBossPrefab, secondBossPrefab };
-        enemyWaves = new GameObject[] { firstWave, secondWave };
+        // bosses = new GameObject[] { firstBossPrefab, secondBossPrefab };
+        // enemyWaves = new GameObject[] { firstWave, secondWave };
+        
+        enemies = Enemies;
 
         player = Player;
         
         GameData.OnAllMobsDead += OnAllMobsDead;
-        GameData.OnBossKilled += SpawnMobs;
+        //GameData.OnBossKilled += SpawnMobs;
         GameData.OnGameOver += GameOver;
         GameData.OnEnterToNirvana += TrueEnding;
         
@@ -57,7 +65,8 @@ public class GameManager : MonoBehaviour
         winPanel = WinPanel;
         gameOverPanel = GameOverPanel;
         
-        SpawnMobs();
+        Instantiate(enemies[0]);
+        //SpawnMobs();
     }
 
     public static void Play()
@@ -69,18 +78,21 @@ public class GameManager : MonoBehaviour
     // {
     //     Instantiate(player);
     //     Instantiate(hpBar);
+    //     Instantiate(enemies[0]);
     //     SpawnMobs();
     // }
 
-    public static void SpawnMobs()
-    {
-        Instantiate(enemyWaves[GameData.BossesKilled]);
-    }
+    // public static void SpawnMobs()
+    // {
+    //     //GameData.PlayerHp += GameData.PlayerHp < 4 ? 1 : 0;
+    //     //Instantiate(enemyWaves[GameData.BossesKilled]);
+    //     Instantiate(enemies[level]);
+    // }
 
     private void OnAllMobsDead()
     {
         GameData.PlayerHp += GameData.PlayerHp < 4 ? 1 : 0;
-        Instantiate(bosses[GameData.BossesKilled]);
+        Instantiate(enemies[level++]);
     }
     
     public static void GameOver()
@@ -111,7 +123,7 @@ public class GameManager : MonoBehaviour
     void OnDestroy()
     {
         GameData.OnAllMobsDead -= OnAllMobsDead;
-        GameData.OnBossKilled -= SpawnMobs;
+        //GameData.OnBossKilled -= SpawnMobs;
         GameData.OnGameOver -= GameOver;
         GameData.OnEnterToNirvana -= TrueEnding;
     }

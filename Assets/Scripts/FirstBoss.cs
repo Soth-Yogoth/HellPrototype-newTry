@@ -108,13 +108,6 @@ public class FirstBoss : BaseEnemy
         
         hpBar.UpdateHpBar(health, maxHp);
     }
-    
-    protected override void Death()
-    {
-        GameData.PlayerHp += GameData.PlayerHp < 4 ? 1 : 0;
-        GameData.BossesKilled++;
-        Destroy(gameObject);
-    }
 
     private float getAngle()
     {

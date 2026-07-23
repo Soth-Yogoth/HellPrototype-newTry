@@ -3,7 +3,6 @@ using UnityEngine;
 public class SimpleEnemy : BaseEnemy
 {
     Rigidbody2D rb;
-    bool isDead = false;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     new void Awake()
@@ -11,7 +10,7 @@ public class SimpleEnemy : BaseEnemy
         base.Awake();
         
         rb = GetComponent<Rigidbody2D>();
-        GameData.MobQuantity++;
+        //GameData.MobQuantity++;
     }
     
     // protected void OnTriggerEnter2D(Collider2D other)
@@ -34,16 +33,6 @@ public class SimpleEnemy : BaseEnemy
         direction.Normalize();
         
         rb.linearVelocity = direction * moveSpeed;
-    }
-
-    protected override void Death()
-    {
-        if(isDead) return;
-        
-        base.Death();
-        
-        isDead = true;
-        GameData.MobQuantity--;
     }
     
     protected void OnTriggerEnter2D(Collider2D other)
