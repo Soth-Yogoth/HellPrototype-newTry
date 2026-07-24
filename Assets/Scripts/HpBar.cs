@@ -14,7 +14,6 @@ public class HpBar : MonoBehaviour
 
     public void UpdateHpBar(float currentHp, float max)
     {
-        Debug.Log("Update: " + currentHp);
         img.fillAmount = currentHp / max;
     }
 }

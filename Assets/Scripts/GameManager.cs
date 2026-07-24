@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -23,8 +22,6 @@ public class GameManager : MonoBehaviour
     
     public static Vector2 FirstScreenCorner;
     public static Vector2 SecondScreenCorner;
-
-    private static int level = 0;
     
     void Start()
     {
@@ -35,7 +32,7 @@ public class GameManager : MonoBehaviour
 
         player = Player;
         
-        GameData.OnAllMobsDead += OnAllMobsDead;
+        GameData.OnStageUpdate += OnStageUpdate;
         GameData.OnGameOver += GameOver;
         GameData.OnEnterToNirvana += TrueEnding;
         
@@ -55,10 +52,10 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
     }
 
-    private void OnAllMobsDead()
+    private void OnStageUpdate(int level)
     {
         GameData.PlayerHp += GameData.PlayerHp < 4 ? 1 : 0;
-        Instantiate(enemies[level++]);
+        Instantiate(enemies[level]);
     }
     
     public static void GameOver()
@@ -88,7 +85,7 @@ public class GameManager : MonoBehaviour
 
     void OnDestroy()
     {
-        GameData.OnAllMobsDead -= OnAllMobsDead;
+        GameData.OnStageUpdate -= OnStageUpdate;
         GameData.OnGameOver -= GameOver;
         GameData.OnEnterToNirvana -= TrueEnding;
     }

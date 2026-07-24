@@ -8,12 +8,13 @@ public class GameData : ScriptableObject
 {
     private static int chanceToWin = 5;
     private static int mobQuantity = 0;
+    private static int stage = 0;
     private static int score = 0;
     
     private static int playerHp = 3;
     
     public static event Action<int> OnPlayerHpChanged;
-    public static event Action OnAllMobsDead;
+    public static event Action<int> OnStageUpdate;
     public static event Action OnGameOver;
     public static OnWinDelegate OnEnterToNirvana;
 
@@ -22,6 +23,7 @@ public class GameData : ScriptableObject
         chanceToWin = 5;
         mobQuantity = 0;
         playerHp = 3;
+        stage = 0;
     }
 
     public static int PlayerHp
@@ -50,7 +52,7 @@ public class GameData : ScriptableObject
         set
         {
             mobQuantity = value;
-            if (mobQuantity == 0) OnAllMobsDead?.Invoke();
+            if (mobQuantity == 0) OnStageUpdate?.Invoke(++stage);
         }
     }
     

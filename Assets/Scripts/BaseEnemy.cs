@@ -12,16 +12,15 @@ public abstract class BaseEnemy : MonoBehaviour
     
     protected int health;
     protected bool isReady = false;
-    protected bool isDead = false;
+    private bool isDead = false;
     
-    protected SpriteRenderer sr;
+    private SpriteRenderer sr;
     
     protected static Transform playerTransform;
     public static Transform PlayerTransform { set { playerTransform = value; } } //Вызов из GameManager
 
     protected void Awake()
     {
-        Debug.Log(gameObject + " Awake");
         GameData.MobQuantity++;
         health = maxHp;
         
